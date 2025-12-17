@@ -50,6 +50,44 @@ export default function Home() {
           </Button>
         </div>
       </header>
+
+      {/* hero section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex rounded-full bg-orange-100 text-orange-700 px-6 py-2 items-center text-sm font-medium mb-6">
+            Made with ❤️ by Xtra
+          </div>
+
+          <h2 className="font-bold text-5xl text-gray-900 tracking-tight mb-4">
+            Never miss a price drop
+          </h2>
+
+          <p className="max-w-2xl mb-12 mx-auto text-xl text-gray-600">
+            Track prices from any ecommerce platform. Get alerts when prices
+            drop and save money instantly!
+          </p>
+
+          {/* products */}
+
+          {/* features */}
+          {products.length === 0 && (
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
+              {FEATURES.map(({ icon: Icon, title, description }) => (
+                <div
+                  key={title}
+                  className="rounded-xl border border-gray-200 p-6 bg-white"
+                >
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                    <Icon className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
+                  <p className="text-gray-600 text-sm">{description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </main>
   );
 }
